@@ -1,0 +1,166 @@
+﻿@page "/documentation"
+
+<div class="documentation-container">
+    <div class="documentation-header">
+        <h1>ADG LTI 1.3 Setup Guide</h1>
+        <p class="lead">Welcome to the ADG LTI 1.3 Setup Guide. This guide will help you install and configure ADG in Moodle.</p>
+    </div>
+
+    <div class="requirements-section">
+        <h2>Requirements</h2>
+        <div class="requirements-list">
+            <div class="requirement-item">
+                <span class="requirement-number">1.</span>
+                <span class="requirement-text">Ensure ADG.LTI is running</span>
+            </div>
+            <div class="requirement-item">
+                <span class="requirement-number">2.</span>
+                <span class="requirement-text">Ensure access to Moodle with administrator rights (local Moodle is acceptable)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="local-moodle-section">
+        <h2>Note on Local Moodle</h2>
+        <div class="info-box">
+            <h3>Using Bitnami's Moodle Image</h3>
+            <p>Use Bitnami's Moodle image to run Moodle locally with the following default credentials:</p>
+            <div class="credentials">
+                <div class="credential-item">
+                    <strong>Username:</strong> <code>user</code>
+                </div>
+                <div class="credential-item">
+                    <strong>Password:</strong> <code>bitnami</code>
+                </div>
+            </div>
+            
+            <div class="https-requirement">
+                <h4>HTTPS Requirement for LTI Tools</h4>
+                <p>LTI tools require HTTPS. Enable HTTPS and trust self-signed or invalid certificates (acceptable locally).</p>
+                
+                <div class="setup-step">
+                    <p><strong>Action:</strong> Append "https://" to the URL</p>
+                    <div class="image-container">
+                        <img src="/images/docs/11.png" alt="HTTPS URL Configuration" class="setup-image" />
+                    </div>
+                </div>
+                
+                <div class="setup-step">
+                    <p><strong>Action:</strong> Trust the local certificates (valid temporarily)</p>
+                    <div class="image-container">
+                        <img src="/images/docs/12.png" alt="Trust Local Certificates" class="setup-image" />
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <p><strong>Important:</strong> Moodle works without HTTPS, but LTI tools do NOT. Ensure you are using a secure HTTPS connection.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setup-section">
+        <h2>Setup Instructions</h2>
+        
+        <div class="setup-step">
+            <h3>Step 1: Ensure Administrative Rights</h3>
+            <p>Ensure you have administrative rights in Moodle before proceeding.</p>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 2: Navigate to Manage Tools</h3>
+            <p>Navigate to: <strong>Site administration → Plugins → Manage tools</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/1.png" alt="Navigate to Manage Tools" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 3: Add ADG Tool</h3>
+            <p>Add the ADG Tool using one of the following URLs:</p>
+            <div class="url-options">
+                <div class="url-option">
+                    <strong>Local:</strong> <code>https://localhost:5212/lti/dynamicregistration</code>
+                </div>
+                <div class="url-option">
+                    <strong>Production:</strong> <code>https://cliniqueludique.com/lti/dynamicregistration</code>
+                </div>
+            </div>
+            <p>Click <strong>"Add LTI Advantage"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/2.png" alt="Add LTI Advantage" class="setup-image" />
+            </div>
+            <div class="info-note">
+                <p><em>Dynamic registration simplifies manual configuration.</em></p>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 4: Enable the Tool</h3>
+            <p>Enable the newly added tool</p>
+            <div class="image-container">
+                <img src="/images/docs/3.png" alt="Enable the Tool" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 5: Open Course</h3>
+            <p>Open the course where the plugin will be added</p>
+            <div class="image-container">
+                <img src="/images/docs/4.png" alt="Open Course" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 6: Configure LTI External Tools</h3>
+            <p>Navigate to: <strong>More → LTI External tools</strong></p>
+            <p>Toggle: <strong>"Show in activity chooser"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/5.png" alt="LTI External Tools Configuration" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 7: Enable Edit Mode</h3>
+            <p>Return to course and enable <strong>"Edit mode"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/6.png" alt="Enable Edit Mode" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 8: Add New Activity</h3>
+            <p>Add new <strong>"Activity or Resource"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/7.png" alt="Add New Activity" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 9: Select Clinique Ludique</h3>
+            <p>Select <strong>"Clinique Ludique"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/9.png" alt="Select Clinique Ludique" class="setup-image" />
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <h3>Step 10: Save and Return</h3>
+            <p>Click <strong>"Save and return to course"</strong></p>
+            <div class="image-container">
+                <img src="/images/docs/10.png" alt="Save and Return to Course" class="setup-image" />
+            </div>
+        </div>
+    </div>
+
+    <div class="verification-section">
+        <h2>Verification</h2>
+        <div class="success-box">
+            <p>If the setup was successful, the ADG game should appear in the course.</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    
+}

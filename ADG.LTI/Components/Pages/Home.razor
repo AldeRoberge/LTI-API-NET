@@ -1,0 +1,55 @@
+﻿@page "/"
+
+<PageTitle>ADG API – Welcome</PageTitle>
+
+<div class="home-root">
+
+
+    
+    <div class="card">
+        <div class="glow"></div>
+        <div class="card-content">
+            <span class="badge"><span class="dot"></span> LTI API is Running</span>
+            <h1>Welcome to the API LTI!</h1>
+            <p>This server is running <strong>@ServerType</strong> in <strong>@Environment</strong> environment.</p>
+
+
+
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Host</th>
+                    <th>Server Type</th>
+                    <th>Environment</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>@Version</td>
+                    <td>@Host</td>
+                    <td>@ServerType</td>
+                    <td>@Environment</td>
+                </tr>
+                </tbody>
+            </table>
+
+            @if (ShowScalar)
+            {
+                <a href="/scalar/" class="button">Go to Scalar API Documentation</a>
+            }
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="glow"></div>
+        <div class="card-content">
+
+            <!-- Note on how you can automatically add this tool to Moodle using the following URL : HOST/lti/dynamicregistration -->
+            <p>You can automatically add this tool to Moodle using the following URL:</p>
+            <pre><code>@(Host)lti/dynamicregistration</code></pre>
+
+        </div>
+    </div>
+</div>
